@@ -1,0 +1,67 @@
+/*
+ *receber a data de nascimento de uma pessoa no formato dd/mm/ aaaa.
+ Usando JOptionPane, usando switch case, verifique o mes de nascimento do usuario e exiba a data no formato extenso
+ex= 20 de junho de 2026 de 2026, usar o JOption para exibir por exetenso.
+
+*/
+package aula04a;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Aluno
+ */
+public class aula04aExercicio1 {
+     public static void main(String[] args) {
+         
+         String dataNasc = JOptionPane.showInputDialog(null, "digite sua data de nascimento de acordo com o seguinte formato (dd/mm/ aaaa)", "informe sua data de nascimento.");
+         String diaNasc= dataNasc.substring(0,2);
+         String mesNasc = dataNasc.substring (3,5);
+         String anoNasc = dataNasc.substring (6,10);
+         
+        
+         switch (mesNasc){
+            
+             case "01":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de janeiro de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "02":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de fevereiro de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "03":
+                  JOptionPane.showMessageDialog (null , diaNasc +  " de março de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "04":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de Abril de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "05":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de Maio de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "06":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de Junho de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "07":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de Julho de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "08":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de Agosto de " + anoNasc, " data nascimento ", 1);
+             case "09":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de Setembro de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "10":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de Outubro de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "11":
+                 JOptionPane.showMessageDialog (null , diaNasc +  " de Novembro de " + anoNasc, " data nascimento ", 1);
+                 break;
+             case "12":
+                 JOptionPane.showMessageDialog (null , diaNasc +  "de dezembro de" + anoNasc, "data nascimento", 1);
+                 break;
+                 default:
+                 JOptionPane.showMessageDialog (null , "Data de nascimento digitada invalida!!","data de nascimento invalida",1);
+                 break;
+                 
+         } 
+     }
+    
+}
