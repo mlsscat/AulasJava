@@ -1,0 +1,42 @@
+/*
+ * usando a estrutura do...while, receba numeros decimais e somar esses numeros. 
+O usuario deve digitar cada numero em uma caixa de dialogo JOptionPane. Quando o
+usuario digitar o numero 0 interrompa a soma e imprima o resultado. A mensagem da 
+caixa de dialogo pode ser "digite um numero para a soma ou zero para encerrar"
+ */
+package aula05a;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Aluno
+ */
+public class Aula05Aexercicio1 {
+     public static void main(String[] args) {
+         
+         String tit= "Digite um numero ou zero!!";
+         double numero ;
+         double soma=0 ;
+         int resposta;
+         
+         
+         
+         do {
+              String NumerosStr = JOptionPane.showInputDialog (null, "Digite um numero ou zero para a soma encerrar", tit, 3);
+               NumerosStr= NumerosStr.replace (",", ".");
+               
+              
+             numero = Double.parseDouble(NumerosStr);
+             soma+= numero;
+            
+               
+         } while (numero !=0 );
+        
+        String msg= "a soma dos numeros digitados é igual a= " + soma;
+         JOptionPane.showMessageDialog (null, msg, tit, 1);
+         
+         
+         
+     }
+}
