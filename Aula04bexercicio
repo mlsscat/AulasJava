@@ -1,0 +1,57 @@
+/*
+ * um programa que recebe o nome de um aluno e as notas que esse aluno recebeu ao longo do ano, criar um loop infitino. 
+A cada nota lançada exiba uma caixa perguntando se o professor deseja lançar outra nota. Depois de otodas as notas lançadas calcule a media e exiba 
+uma caixa com aprovado ou reprovado!! para ser aprovado o aluno tem que tirar media maior ou igual a 50;
+ */
+package aula04b;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Aluno
+ */
+public class aula04bexercicio {
+     public static void main(String[] args) {
+         
+         String nome = JOptionPane.showInputDialog (null, "Digite o nome do aluno",
+                     "nome do aluno", 1);
+         
+         double soma=0;
+         int quant =0;
+         
+         while (true){
+              double nota;
+              
+             nota = Double.parseDouble(JOptionPane.showInputDialog (null, "Digite a nota do aluno!", "Digite a nota do aluno", 3));
+         
+             
+            quant++;
+            soma += nota;
+             
+             int resposta= JOptionPane.showConfirmDialog (null, "deseja digitar outra nota??", "Quer digitar outra nota??", JOptionPane.YES_NO_OPTION, 3);
+             
+             if (resposta == JOptionPane.NO_OPTION){
+                 break;
+             }
+         }    
+             double media= soma/quant;
+             
+             if ( media >=50 ){
+                 JOptionPane.showMessageDialog(null,
+                         "aluno= " + nome +
+                         "\nMédia" + media+
+                         "\nAPROVADO!!", "aprovadooo", 2);
+             }else {
+                  JOptionPane.showMessageDialog(null,
+                          "aluno= " + nome +
+                         "\nMédia" + media+
+                         "\nREPROVADO.","reprovadooo", 2);
+            
+             }
+             
+             
+             
+         
+     }
+    
+}
