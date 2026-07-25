@@ -1,0 +1,49 @@
+/*
+ * gerar uma array de 6 elementos.
+ * utilizando 5 elementos, utilizando a biblioteca Random, sorteie 5 numeros 
+entre 1 e 100 e coloque cada numero em um elemento do array. Imprima no console
+cada numero da array.
+ * desafio: nao insira numeros repetidos. 
+ */
+package aula05c;
+
+import java.util.Random;
+
+/**
+ *
+ * @author Aluno
+ */
+public class aula05cExercicio {
+
+    public static void main(String[] args) {
+
+        int[] numeros = new int[6];
+        {
+            //uma array vazia
+        };
+        Random rd = new Random();
+       int numeroSorteado = rd.nextInt(100) + 1;
+        numeros[0] = numeroSorteado;
+        for (int i = 0; i < 5; i++) {
+
+            numeroSorteado = rd.nextInt(100) + 1;
+
+            boolean repetido = false;
+
+            for (int j = 0; j < i; j++) {
+                if (numeros[j] == numeroSorteado) {
+                    repetido = true;
+                    continue;
+                }
+                if (!repetido) {
+                    
+                    numeros[i] = numeroSorteado;
+
+                }
+            }
+            System.out.println(numeros[i]);
+
+        }
+
+    }
+}
