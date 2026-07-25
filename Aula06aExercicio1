@@ -1,0 +1,58 @@
+/*
+ * Utilizando arrayLista, faça um programa que simule uma lista de tarefas. O programa deve permitir que o usuario adicione
+ * varias tarefas. Para isso crie um loopque se encerra quando o usuario nao quiser mais inseriri novas tarefas.
+ *
+ */
+package aula06a;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Aluno
+ */
+public class Aula06aExercicio1 {
+
+    public static void main(String[] args) {
+
+        ArrayList< String > tarefas = new ArrayList<String>();
+        String respostaStr;
+
+        do {
+            respostaStr = JOptionPane.showInputDialog(null, "digite seus afazeres ou digite 0 para encerrar a lista");
+            
+            tarefas.add(respostaStr);
+               
+            
+        } while (!respostaStr.equals("0"));
+        tarefas.remove(tarefas.indexOf("0"));
+        
+        System.out.println(tarefas);
+         System.out.println("\nTAREFAS");
+         
+       for (String t : tarefas){
+           System.out.println("-".repeat(20));
+           System.out.println ("-" + t);
+           
+        }
+       
+       tarefas.remove(3);
+        System.out.println("\nLista de afazeres atualizado!! ");
+        
+       for (String j : tarefas){
+       System.out.println("-".repeat(20));
+            System.out.println ("\n-"+ j);
+       }
+       System.out.println("=".repeat(20));
+        
+        
+
+        
+        
+        
+        
+        
+    }
+
+}
