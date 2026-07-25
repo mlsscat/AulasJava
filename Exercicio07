@@ -1,0 +1,75 @@
+/*
+ * Faça um programa com metodos com parametros e com retorno, para calcular a area de 
+ * três objetos geometricos. Para calcular a area de um triangulo, utilize a formula : 
+ * ( base * altura /2) para calcular a area de um retangulo, utilize a formula: 
+ * (base * altura). Para calcular a area e um circulo, utilize a formula :
+ * (pi * (raio * raio.
+ * crie um metodo para cada calculo e no metodo "main" solicite os valores, calcule,
+ * area e informe o resultado. Pode ser JOptionPane, System, ou Scanner. 
+ * nao esqueça de instanciar os objetos 
+ *
+ *
+ */
+package aula07b;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Aluno
+ */
+public class Exercicio07 {
+
+    public double calcularAreaTriangulo(double base, double altura) {
+        return (base * altura) / 2;
+    }
+
+    public double calcularAreaRetangulo(double base, double altura) {
+        return (base * altura);
+    }
+
+    public double calcularAreaCirculo(double raio) {
+        return Math.PI * (raio * raio);
+    }
+
+    public static void main(String args[]) {
+
+        Exercicio07 msg = new Exercicio07();
+
+        String menu = JOptionPane.showInputDialog("escolha uma opcao\n"
+                + "1-Triangulo\n" + "2-Retangulo\n" + "3-Cirulo\n");
+        double resultado = 0.0;
+
+        switch (menu) {
+            case "1":
+                double baseTri = Double.parseDouble(JOptionPane.showInputDialog("Informe a base"));
+                double altTri = Double.parseDouble(JOptionPane.showInputDialog("Informe a altura"));
+
+                resultado = msg.calcularAreaTriangulo(baseTri, altTri);
+                JOptionPane.showMessageDialog(null, "O resultado  é " + resultado);
+                break;
+
+            case "2":
+                double baseRet = Double.parseDouble(JOptionPane.showInputDialog("Informe a base"));
+                double altRet = Double.parseDouble(JOptionPane.showInputDialog("Informe a altura"));
+
+                resultado = msg.calcularAreaRetangulo(baseRet, altRet);
+                JOptionPane.showMessageDialog(null, "O resultado  é " + resultado);
+
+                break;
+
+            case "3":
+                double raioCir = Double.parseDouble(JOptionPane.showInputDialog("Informe o raio "));
+
+                resultado = msg.calcularAreaCirculo(raioCir);
+               
+
+                JOptionPane.showMessageDialog(null, "O resultado é " +  String.format("%.2f" , resultado));
+                break;
+
+            default:
+                JOptionPane.showMessageDialog(null, "opçao invalida");
+        }
+    }
+
+}
