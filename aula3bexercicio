@@ -1,0 +1,68 @@
+/*
+ * 
+ */
+package java03b;
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author Aluno
+ */
+public class aula3bexercicio {
+    
+     public static void main (String args []) {
+         
+         //recebr nome, peso em kg, altura em metros. calcular o imc usando a
+         //formula, imc = peso / altura * altura. classifique o usuario na 
+         //tabela
+         
+        String nome = JOptionPane.showInputDialog (null,
+                "digite o seu nome- ",
+                "Saiba seu imc", 3);
+        
+        String pesoStr = JOptionPane.showInputDialog (null,
+                "digite o seu peso em kg- ",
+                "Saiba seu imc ", 3);
+        
+         double peso = Double.parseDouble(pesoStr);
+        
+        String AlturaStr = JOptionPane.showInputDialog (null,
+                "digite a sua altura em metros- ",
+                "Saiba seu imc", 3);
+         
+         double Altura = Double.parseDouble(AlturaStr);
+        
+        
+      double imc= peso/ (Altura* Altura);
+     
+      
+      String msg = "";
+      
+       if (imc <= 18.5) {
+            msg = nome + " IMC = " +
+                    String.format("%.1f",imc) + " abaixo do peso normal" ;
+            
+     } else if (imc<=24.9) {
+            msg = nome + " IMC = "+
+                    String.format("%.1f",imc) + " Classificação = peso normal" ;
+       }   
+       else if (imc <= 29.9 ){
+        msg = nome + " IMC = "+
+                    String.format("%.1f",imc) + " Classificação = Sobrepeso" ;
+     } else if (imc <= 34.9){
+          msg = nome + " IMC = "+
+                    String.format("%.1f",imc) + " Classificação = Obesidade Grau I" ;
+     } else if (imc <= 39.9) {
+          msg = nome + " IMC = "+
+                    String.format("%.1f",imc) + " Classificação = Obesidade grau II" ;
+     }else {
+              msg = nome + " IMC = "+
+                    String.format("%.1f",imc) + " Classificação = Obesidade grau III" ;
+             }
+       
+         JOptionPane.showMessageDialog(
+            null, msg,
+            "SEU IMC", 1);
+     
+     }
+      
+}
